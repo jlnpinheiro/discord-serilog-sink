@@ -10,20 +10,20 @@ namespace JNogueira.Discord.Serilog;
 
 public static class DiscordSinkExtensions
 {
-    public static IServiceCollection AddSerilogWithDiscordSink(this IServiceCollection services, string discordWebhookUrl)
+    public static IServiceCollection AddSerilogWithDiscordSink(this IServiceCollection services, string discordWebhookUrl, ServiceLifetime serviceLifetime = ServiceLifetime.Scoped)
     {
         services.AddHttpContextAccessor();
 
-        services.AddDiscordWebhookClient(discordWebhookUrl);
+        services.AddDiscordWebhookClient(discordWebhookUrl, serviceLifetime);
 
         return services;
     }
 
-    public static IServiceCollection AddSerilogWithDiscordSink(this IServiceCollection services, IConfiguration config)
+    public static IServiceCollection AddSerilogWithDiscordSink(this IServiceCollection services, IConfiguration config, ServiceLifetime serviceLifetime = ServiceLifetime.Scoped)
     {
         services.AddHttpContextAccessor();
 
-        services.AddDiscordWebhookClient(config["Serilog:Discord:WebhookUrl"]);
+        services.AddDiscordWebhookClient(config["Serilog:Discord:WebhookUrl"], serviceLifetime);
 
         services.Configure<DiscordSinkConfiguration>(config.GetSection("Serilog:Discord"));
 
