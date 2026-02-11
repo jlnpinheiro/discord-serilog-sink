@@ -9,6 +9,20 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Content Remove="C:\Users\jlnpi\.nuget\packages\microsoft.testplatform.testhost\17.8.0\build\netcoreapp3.1\x64\testhost.dll" />
+	  <Content Remove="C:\Users\jlnpi\.nuget\packages\microsoft.testplatform.testhost\17.8.0\build\netcoreapp3.1\x64\testhost.exe" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="C:\Users\jlnpi\.nuget\packages\nunit3testadapter\4.5.0\build\netcoreapp3.1\nunit.engine.api.dll" />
+	  <None Remove="C:\Users\jlnpi\.nuget\packages\nunit3testadapter\4.5.0\build\netcoreapp3.1\nunit.engine.core.dll" />
+	  <None Remove="C:\Users\jlnpi\.nuget\packages\nunit3testadapter\4.5.0\build\netcoreapp3.1\nunit.engine.dll" />
+	  <None Remove="C:\Users\jlnpi\.nuget\packages\nunit3testadapter\4.5.0\build\netcoreapp3.1\NUnit3.TestAdapter.dll" />
+	  <None Remove="C:\Users\jlnpi\.nuget\packages\nunit3testadapter\4.5.0\build\netcoreapp3.1\NUnit3.TestAdapter.pdb" />
+	  <None Remove="C:\Users\jlnpi\.nuget\packages\nunit3testadapter\4.5.0\build\netcoreapp3.1\testcentric.engine.metadata.dll" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Moq" Version="4.20.72" />
 		<PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.6" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.6" />
