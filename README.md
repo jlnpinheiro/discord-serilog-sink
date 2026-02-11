@@ -32,7 +32,7 @@ var myDiscordWebhookUrl = "https://discord.com/api/webhooks/...";
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddSerilogWithDiscordSink(myDiscordWebhookUrl)
+builder.Services.AddSerilogWithDiscordSink(myDiscordWebhookUrl, ServiceLifetime.Singleton)
 ... 
 var app = builder.Build();
 
