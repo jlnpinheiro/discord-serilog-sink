@@ -1,0 +1,30 @@
+{
+  "Serilog": {
+    "Discord": {
+      "ApplicationName": "Discord Serilog Sink Test",
+      "MessageUserName": "Test Bot 1",
+      "EnvironmentName": "Development",
+      "MinLogEventLevel": "Verbose",
+      "MessageEmbedFields": [
+        {
+          "Name": "Extra info 1",
+          "Value": "This is extra info 1."
+        },
+        {
+          "Name": "Extra info 2",
+          "Value": "This is extra info 2."
+        }
+      ],
+      "UserClaimValueToDiscordFields": [
+        {
+          "ClaimType": "NameIdentifier",
+          "DiscordFieldName": "Name identifier"
+        },
+        {
+          "ClaimType": "Name",
+          "DiscordFieldName": "Name"
+        }
+      ]
+    }
+  }
+}

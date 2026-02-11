@@ -15,6 +15,7 @@ public class DiscordSerilogSinkTests2
     {
         var configuration = new ConfigurationBuilder()
             .AddJsonFile("testSettings.json")
+            .AddJsonFile("testSettings2.json")
             .Build();
 
         var user = new ClaimsPrincipal(new ClaimsIdentity(

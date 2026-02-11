@@ -14,6 +14,7 @@ public class DiscordSerilogSinkTests
     {
         var configuration = new ConfigurationBuilder()
             .AddJsonFile("testSettings.json")
+            .AddJsonFile("testSettings2.json")
             .Build();
 
         var user = new ClaimsPrincipal(new ClaimsIdentity(
@@ -69,7 +70,7 @@ public class DiscordSerilogSinkTests
     [Test]
     public async Task Should_Log_Verbose_Message()
     {
-        Log.Logger.Verbose("This is a debug message from unit test!");
+        Log.Logger.Verbose("This is a verbose message from unit test!");
 
         Assert.Pass();
     }
@@ -78,6 +79,14 @@ public class DiscordSerilogSinkTests
     public async Task Should_Log_Error_Message()
     {
         Log.Logger.Error("This is a error message from unit test!");
+
+        Assert.Pass();
+    }
+
+    [Test]
+    public async Task Should_Log_Fatal_Message()
+    {
+        Log.Logger.Fatal("This is a fatal message from unit test!");
 
         Assert.Pass();
     }
@@ -93,7 +102,11 @@ public class DiscordSerilogSinkTests
         }
         catch (Exception ex)
         {
+            ex.Data["Extra info 1"] = "Extra info 1 value";
+            ex.Data["Extra info 2"] = "Extra info 2 value";
+
             Log.Logger.Error(ex, "An exception occurred while executing the unit test.");
         }
     }
+
 }
