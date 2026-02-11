@@ -1,4 +1,4 @@
-# Discord .NET Logger Provider
+# Discord Serilog Sink
 [![NuGet](https://img.shields.io/nuget/dt/discord-serilog-sink.svg?style=flat-square)](https://www.nuget.org/packages/discord-serilog-sink) [![NuGet](https://img.shields.io/nuget/v/discord-serilog-sink.svg?style=flat-square)](https://www.nuget.org/packages/discord-serilog-sink)
 
 A **Serilog** (https://serilog.net/) sink to send log entries to **Discord** (https://discordapp.com/) as message in a channel. 
