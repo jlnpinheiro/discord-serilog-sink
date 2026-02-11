@@ -1,4 +1,4 @@
-# Discord .NET Logger Provider
+# Discord Serilog Sink
 [![NuGet](https://img.shields.io/nuget/dt/discord-serilog-sink.svg?style=flat-square)](https://www.nuget.org/packages/discord-serilog-sink) [![NuGet](https://img.shields.io/nuget/v/discord-serilog-sink.svg?style=flat-square)](https://www.nuget.org/packages/discord-serilog-sink)
 
 A **Serilog** (https://serilog.net/) sink to send log entries to **Discord** (https://discordapp.com/) as message in a channel. 
@@ -72,37 +72,37 @@ Log.Logger = new LoggerConfiguration()
 ```csharp
 Log.Logger.Verbose("This is a verbose message from unit test!");
 ```
-![Trace message](https://raw.githubusercontent.com/jlnpinheiro/logger-discord-provider/refs/heads/assets/trace.png?raw=true)
+![Trace message](https://raw.githubusercontent.com/jlnpinheiro/discord-serilog-sink/refs/heads/assets/verbose.png?raw=true)
 
 **Debug**
 ```csharp
 Log.Logger.Debug("This is a debug message from unit test!");
 ```
-![Debug message](https://raw.githubusercontent.com/jlnpinheiro/logger-discord-provider/refs/heads/assets/debug.png?raw=true)
+![Debug message](https://raw.githubusercontent.com/jlnpinheiro/discord-serilog-sink/refs/heads/assets/debug.png?raw=true)
 
 **Information**
 ```csharp
 Log.Logger.Information("This is a info message from unit test!");
 ```
-![Debug message](https://raw.githubusercontent.com/jlnpinheiro/logger-discord-provider/refs/heads/assets/information.png?raw=true)
+![Debug message](https://raw.githubusercontent.com/jlnpinheiro/discord-serilog-sink/refs/heads/assets/information.png?raw=true)
 
 **Warning**
 ```csharp
 Log.Logger.Warning("This is a warning message from unit test!");
 ```
-![Warning message](https://raw.githubusercontent.com/jlnpinheiro/logger-discord-provider/refs/heads/assets/warning.png?raw=true)
+![Warning message](https://raw.githubusercontent.com/jlnpinheiro/discord-serilog-sink/refs/heads/assets/warning.png?raw=true)
 
 **Error**
 ```csharp
 Log.Logger.Error("This is a error message from unit test!");
 ```
-![Error message](https://raw.githubusercontent.com/jlnpinheiro/logger-discord-provider/refs/heads/assets/error.png?raw=true)
+![Error message](https://raw.githubusercontent.com/jlnpinheiro/discord-serilog-sink/refs/heads/assets/error.png?raw=true)
 
 **Fatal**
 ```csharp
 Log.Logger.Fatal("This is a fatal message from unit test!");
 ```
-![Error message](https://raw.githubusercontent.com/jlnpinheiro/logger-discord-provider/refs/heads/assets/critical.png?raw=true)
+![Error message](https://raw.githubusercontent.com/jlnpinheiro/discord-serilog-sink/refs/heads/assets/fatal.png?raw=true)
 
 **Handle an exception!**<br/>
 The attachment file *"exception-details.txt"* contains more exception details like base exception, stack trace content, exception type, exception extra data information.
@@ -121,4 +121,4 @@ catch (Exception ex)
     Log.Logger.Error(ex, "An exception occurred while executing the unit test.");
 }
 ```
-![Error message](https://raw.githubusercontent.com/jlnpinheiro/logger-discord-provider/refs/heads/assets/exception.png?raw=true)
+![Error message](https://raw.githubusercontent.com/jlnpinheiro/discord-serilog-sink/refs/heads/assets/exception.png?raw=true)
