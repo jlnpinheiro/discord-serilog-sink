@@ -43,6 +43,7 @@ Log.Logger = new LoggerConfiguration()
 
 ```json
 //appSettings.json
+
 {
   "Serilog": {
     "Discord": {
@@ -65,71 +66,41 @@ Log.Logger = new LoggerConfiguration()
 }
 ```
 
-## How to logging
-This sample code shows how to add Discord Logger on a ASP.NET Core API controller:
-
-```csharp
-using Microsoft.Extensions.Logging;
-
-namespace My.Sample.Code
-{
-    public class TodoController : Controller
-    {
-        private readonly ILogger<TodoController> _logger;
-
-        public TodoController(ITodoRepository todoRepository, ILogger<TodoController> logger)
-        {
-            _logger = logger;
-        }
-        
-        public IActionResult SayHello()
-        {
-            ...
-            
-            // Call "LogInformation" to sendo log messages to Discord channel
-            _logger.LogInformation("Hello! This is a sample Discord message sent by ASP.NET Core application!");
-            
-            ...
-        }
-    }
-}
-```
-
 ## Message types
 
-**Trace**
+**Verbose**
 ```csharp
-_logger.LogTrace("My trace message is here!");
+Log.Logger.Verbose("This is a verbose message from unit test!");
 ```
 ![Trace message](https://raw.githubusercontent.com/jlnpinheiro/logger-discord-provider/refs/heads/assets/trace.png?raw=true)
 
 **Debug**
 ```csharp
-_logger.LogDebug("My debug message is here!");
+Log.Logger.Debug("This is a debug message from unit test!");
 ```
 ![Debug message](https://raw.githubusercontent.com/jlnpinheiro/logger-discord-provider/refs/heads/assets/debug.png?raw=true)
 
 **Information**
 ```csharp
-_logger.LogInformation("My information message is here!");
+Log.Logger.Information("This is a info message from unit test!");
 ```
 ![Debug message](https://raw.githubusercontent.com/jlnpinheiro/logger-discord-provider/refs/heads/assets/information.png?raw=true)
 
 **Warning**
 ```csharp
-_logger.LogWarning("My warning message is here!");
+Log.Logger.Warning("This is a warning message from unit test!");
 ```
 ![Warning message](https://raw.githubusercontent.com/jlnpinheiro/logger-discord-provider/refs/heads/assets/warning.png?raw=true)
 
 **Error**
 ```csharp
- _logger.LogError("My error message is here!");
+Log.Logger.Error("This is a error message from unit test!");
 ```
 ![Error message](https://raw.githubusercontent.com/jlnpinheiro/logger-discord-provider/refs/heads/assets/error.png?raw=true)
 
-**Critical**
+**Fatal**
 ```csharp
- _logger.LogCritical("My critical message is here!");
+Log.Logger.Fatal("This is a fatal message from unit test!");
 ```
 ![Error message](https://raw.githubusercontent.com/jlnpinheiro/logger-discord-provider/refs/heads/assets/critical.png?raw=true)
 
@@ -147,7 +118,7 @@ catch (Exception ex)
     ex.Data["Extra info 1"] = "Extra info 1 value";
     ex.Data["Extra info 2"] = "Extra info 2 value";
 
-    _logger.LogError(ex, "A exception is handled!");
+    Log.Logger.Error(ex, "An exception occurred while executing the unit test.");
 }
 ```
 ![Error message](https://raw.githubusercontent.com/jlnpinheiro/logger-discord-provider/refs/heads/assets/exception.png?raw=true)
