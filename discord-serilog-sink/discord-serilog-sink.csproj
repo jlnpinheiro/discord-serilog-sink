@@ -20,7 +20,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="discord-webhook-client" Version="4.0.5" />
+	  <PackageReference Include="discord-webhook-client" Version="4.1.0" />
 	  <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.3.9" />
 	  <PackageReference Include="Serilog" Version="4.3.1" />
 	</ItemGroup>
