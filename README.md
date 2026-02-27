@@ -84,7 +84,7 @@ Log.Logger.Debug("This is a debug message from unit test!");
 ```csharp
 Log.Logger.Information("This is a info message from unit test!");
 ```
-![Debug message](https://raw.githubusercontent.com/jlnpinheiro/discord-serilog-sink/refs/heads/assets/information.png?raw=true)
+![Debug message](https://raw.githubusercontent.com/jlnpinheiro/discord-serilog-sink/refs/heads/assets/info.png?raw=true)
 
 **Warning**
 ```csharp
